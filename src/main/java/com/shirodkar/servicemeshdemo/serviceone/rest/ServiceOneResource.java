@@ -17,7 +17,7 @@ public class ServiceOneResource {
   @GetMapping("/handle/{value}")
   public String handleServiceOne(@PathVariable String value) {
     String serviceTwoResponse = this.restClient.get().uri("/handle/{value}", value).retrieve().body(String.class);
-    return "Sent the value - '" + value + "' to Service Two.\nService Two Responded with - '" + serviceTwoResponse + "'";
+    return "Sent the value '" + value + "' to Service Two.\nService Two Responded with - '" + serviceTwoResponse + "'\n";
   }
 
 }
