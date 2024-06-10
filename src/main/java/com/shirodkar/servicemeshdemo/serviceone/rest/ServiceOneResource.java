@@ -23,7 +23,7 @@ public class ServiceOneResource {
     this.restClient = restClientBuilder.baseUrl(baseUrl).build();
 
     String serviceTwoResponse = this.restClient.get().uri("/handle/{value}", value).retrieve().body(String.class);
-    return "Service-One sent the value '" + value + "' to Service-Two.\nService-Two Responded with - '" + serviceTwoResponse + "'.\n";
+    return "Service-One sent the value '" + value + "' to Service-Two (" + baseUrl + ").\nService-Two Responded with - '" + serviceTwoResponse + "'.\n";
   }
 
 }
