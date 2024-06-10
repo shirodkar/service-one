@@ -1,0 +1,6 @@
+services:
+  service-two:
+    image: quay.io/rh_ee_sshirodk/demo-service-two
+    ports:
+      - 8081:8080
+    container_name: service-two
