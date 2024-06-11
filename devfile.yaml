@@ -6,13 +6,8 @@ components:
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       endpoints:
-        - name: http-3000
-          targetPort: 3000
+        - name: service-one
+          targetPort: 8080
   - name: service-two
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
-      sourceMapping: /projects
-      endpoints:
-        - exposure: internal
-          name: service-two
-          targetPort: 8083
