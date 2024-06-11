@@ -31,18 +31,23 @@ components:
       deployment/replicas: 1
       deployment/cpuRequest: 10m
       deployment/memoryRequest: 180Mi
-      deployment/container-port: 8081
+      deployment/container-port: 8082
     kubernetes:
       uri: deploy.yaml
       endpoints:
-        - name: http-8081
-          targetPort: 8081
+        - name: http-8082
+          targetPort: 8082
           path: /
           secure: true
   - name: service-two
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
       sourceMapping: /projects
+      endpoints:
+        - exposure: internal
+          name: http-8081
+          protocol: http
+          targetPort: 8081
 commands:
   - id: build-image
     apply:
