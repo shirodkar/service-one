@@ -17,12 +17,12 @@ commands:
   - id: install
     exec:
       commandLine: mvn clean install
-      component: service-one
+      component: dev-tooling
   - id: package
     exec:
       commandLine: mvn package
-      component: service-one  
+      component: dev-tooling
   - id: run
     exec:
       commandLine: mvn spring-boot:run
-      component: service-one
+      component: dev-tooling
