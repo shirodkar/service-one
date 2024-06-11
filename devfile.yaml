@@ -6,6 +6,14 @@ components:
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
 commands:
+  - id: install
+    exec:
+      commandLine: mvn clean install
+      component: service-one
+  - id: package
+    exec:
+      commandLine: mvn package
+      component: service-one  
   - id: run
     exec:
       commandLine: mvn spring-boot:run
