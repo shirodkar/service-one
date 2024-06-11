@@ -7,6 +7,6 @@ components:
       image: quay.io/rh_ee_sshirodk/demo-service-two
       sourceMapping: /projects
       endpoints:
-        - exposure: public
+        - exposure: internal
           name: service-two
-          targetPort: 8081
+          targetPort: 8083
