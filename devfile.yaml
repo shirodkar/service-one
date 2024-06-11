@@ -10,18 +10,3 @@ components:
         - exposure: public
           name: service-two
           targetPort: 8081
-  - name: postgres
-    container:
-      image: postgres
-      memoryLimit: 512Mi
-      env:
-        - name: postgres_user
-          value: user
-        - name: postgres_password
-          value: password
-        - name: postgres_db
-          value: database
-      endpoints:
-        - name: postgres
-          targetPort: 5432
-          exposure: none
