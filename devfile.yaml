@@ -29,6 +29,9 @@ components:
       - name: postgres
         targetPort: 5432
         exposure: internal
+  - name: pgdata
+    volume:
+      size: 2Gi
 commands:
   - id: install
     exec:
