@@ -27,7 +27,7 @@ components:
         path: /var/lib/mysql/data
       endpoints:
       - name: mysql
-        targetPort: 3307
+        targetPort: 3306
         exposure: internal
   - name: db-volume
     volume:
