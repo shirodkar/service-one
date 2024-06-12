@@ -8,6 +8,27 @@ components:
   - name: service-two
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
+  - name: postgres
+    container:
+      image: quay.io/sclorg/postgresql-15-c9s:c9s
+      memoryRequest: 128M
+      memoryLimit: 512M
+      sourceMapping: /projects
+      mountSources: true
+      env:
+      - name: POSTGRESQL_USER
+        value: postgres
+      - name: POSTGRESQL_PASSWORD
+        value: postgres
+      - name: POSTGRESQL_DATABASE
+        value: postgres
+      volumeMounts:
+      - name: pgdata
+        path: /var/lib/pgsql/data
+      endpoints:
+      - name: postgres
+        targetPort: 5432
+        exposure: internal
 commands:
   - id: install
     exec:
