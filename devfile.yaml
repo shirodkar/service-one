@@ -5,9 +5,25 @@ components:
   - name: dev-tooling
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
+      endpoints:
+      - name: service-one
+        targetPort: 8080
+        exposure: public
+        protocol: http
+      - name: debug
+        exposure: internal
+        targetPort: 5858
+      - name: dt-socket
+        exposure: internal
+        targetPort: 5005
   - name: service-two
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
+      endpoints:
+      - name: service-two
+        targetPort: 8081
+        exposure: internal
+        protocol: http
   - name: postgres
     container:
       image: quay.io/sclorg/postgresql-15-c9s:c9s
