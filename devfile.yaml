@@ -60,6 +60,9 @@ components:
   - volume:
       size: 2Gi
     name: pgdata
+  - volume:
+      size: 2Gi
+    name: m2
 commands:
   - id: install
     exec:
