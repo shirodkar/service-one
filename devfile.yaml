@@ -4,6 +4,12 @@ metadata:
 components:
   - name: dev-tooling
     container:
+      memoryRequest: 1Gi
+      memoryLimit: 8Gi
+      cpuRequest: 500m
+      cpuLimit: 2000m
+      mountSources: true
+      sourceMapping: /projects
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       endpoints:
       - name: service-one
@@ -16,6 +22,12 @@ components:
       - name: dt-socket
         exposure: internal
         targetPort: 5005
+      env:
+      - name: VSCODE_TRUSTED_EXTENSIONS
+        value: "github.copilot,github.copilot-chat"
+      volumeMounts:
+      - name: m2
+        path: /home/user/.m2
   - name: service-two
     container:
       image: quay.io/rh_ee_sshirodk/demo-service-two
