@@ -21,7 +21,7 @@ public class ServiceOneResource {
   @GetMapping("/handle/{value}")
   public String handleServiceOne(@PathVariable String value) {
 
-    logger.info("Service-One received the value - '{}'", value);
+    logger.debug("Service-One received the value - '{}'", value);
 
     RestClient.Builder restClientBuilder = RestClient.builder();
     this.restClient = restClientBuilder.baseUrl(baseUrl).build();
