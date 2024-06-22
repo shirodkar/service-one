@@ -10,6 +10,4 @@ class ServiceOneApplicationTests {
 	void contextLoads() {
 	}
 
-	
-
 }
