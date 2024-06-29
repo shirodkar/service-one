@@ -23,7 +23,7 @@ public class ServiceOneResource {
 
     logger.debug("Service-One received the value - '{}'", value);
 
-    // Pass the value to service-two
+    // Pass the value to another service
     RestClient.Builder restClientBuilder = RestClient.builder();
     this.restClient = restClientBuilder.baseUrl(baseUrl).build();
     String response = this.restClient.get().uri("/handle/{value}", value).retrieve().body(String.class);
