@@ -11,7 +11,7 @@ import org.springframework.web.client.RestClient;
 @RestController
 public class ServiceOneResource {
 
-  @Value("${service-two.base-url}")
+  @Value("${other-service.base-url}")
   private String baseUrl;
 
   private RestClient restClient;
