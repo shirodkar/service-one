@@ -30,7 +30,9 @@ components:
         path: /home/user/.m2
   - name: service-two
     container:
-      image: quay.io/rh_ee_sshirodk/demo-service-two
+      image: quay.io/rh_ee_sshirodk/demo-service-two:latest
+      memoryRequest: 128M
+      memoryLimit: 512M
       endpoints:
       - name: service-two
         targetPort: 8081
