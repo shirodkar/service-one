@@ -23,8 +23,6 @@ public class ServiceOneResource {
 
     logger.debug("Service-One received the value - '{}'", value);
 
-    //code change - 1
-
     // Pass the value as is to another microservice
     RestClient.Builder restClientBuilder = RestClient.builder();
     this.restClient = restClientBuilder.baseUrl(baseUrl).build();
