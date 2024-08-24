@@ -21,7 +21,7 @@ public class ServiceOneResource {
   @GetMapping("/handle/{value}")
   public String handleServiceOne(@PathVariable String value) {
 
-    logger.debug("Service-One received the value - '{}'", value);
+    logger.info(System.getenv("POD_NAME") + " received the value - '{}'", value);
 
     // Pass the value as is to another microservice
     RestClient.Builder restClientBuilder = RestClient.builder();
