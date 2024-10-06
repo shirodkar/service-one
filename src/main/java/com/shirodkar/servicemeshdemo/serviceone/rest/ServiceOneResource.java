@@ -19,7 +19,7 @@ public class ServiceOneResource {
   private static final Logger logger = LoggerFactory.getLogger(ServiceOneResource.class);
 
   @GetMapping("/")
-  public String handleServiceOne(@PathVariable String value) {
+  public String usage() {
     return "Usage: GET /handle/{value}";
   }
 
